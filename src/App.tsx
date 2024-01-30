@@ -11,6 +11,8 @@ import {
     WhatWeDo
 } from "./sections/homepage/Hero";
 import Accordion from "./components/service-page/faq";
+import Navbar from './components/header';
+import Footer from './components/footer';
 
 
 const items = [
@@ -26,6 +28,7 @@ const items = [
 function App() {
   return (
     <>
+    <Navbar />
         <HomepageHero
             imageSrc="/homepage-hero-image.png"
             tagText="OUR EXPERIENCES BOOST YOUR BUSINESS"
@@ -45,6 +48,7 @@ function App() {
         <Accordion title='Frequently asked questions' items={items} />
         <ReviewsSection />
         <DreamTeam />
+        <Footer />
     </>
 
   );

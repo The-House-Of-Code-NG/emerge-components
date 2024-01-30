@@ -167,8 +167,9 @@ text-align: center;
   white-space: nowrap; /* whitespace-nowrap */
 }
 
+
 .button-sm {
-  width: 100%; /* w-full */
+  width: 183.58px; /* w-full */
   height: 52px; /* h-[52px] */
 }
 

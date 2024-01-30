@@ -40,6 +40,8 @@ import plan3 from '../assets/plan3.svg'
 import plan4 from '../assets/plan3.svg'
 
 import caseImage from '../assets/case.svg'
+import Footer from '../components/footer';
+import Navbar from '../components/header';
 
 const images = {
   url: hero,
@@ -576,6 +578,7 @@ function Accordion({ items, title }) {
 function Service() {
   return (
     <>
+      <Navbar />
       <Masthead pageTitle='Search Engine Marketing (SEM) & PPC Management' />
       <Hero title='SEM Agency' subtitle='SEARCH ENGINE MARKETING (SEM) & GOOGLE ADS AGENCY' text={text} button={button} image={images}  />
       <Clients title="Our Happy Clients" images={imagesList} />
@@ -587,6 +590,7 @@ function Service() {
       <Stages buttonText='Book a FREE Strategy Session' title='What Are the 4 Stages of Demand Generation?' stages={stages} />
       <Accordion title='Frequently asked questions' items={items} />
       <Newsletter title='Subscribe to Stay Up to Date' subtitle='Grow Your Business with our insights to the Digital Landscape' buttonText='Subscribe' imageSrc={girl} />
+      <Footer />
     </>
   );
 }
