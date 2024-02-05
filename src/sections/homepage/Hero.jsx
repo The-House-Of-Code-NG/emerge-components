@@ -150,8 +150,8 @@ export const Clients = () => {
 
 export const WhatWeDo = () => {
     return (
-        <Container>
-            <section className="mt-24">
+        <div className="w-full px-[1.25rem] lg:px-[8rem] overflow-hidden bg-gradient-to-b from-transparent to-purple-100">
+            <section className="mt-24 pb-24">
                 <div className="flex flex-col items-center">
                     <div>
                         <span className='h-[36px] text-center font-Inter text-[#100650] font-medium bg-opacity-5 bg-[#4A00FF0F] rounded-[6px] px-[0.62rem] py-2'>
@@ -182,14 +182,14 @@ export const WhatWeDo = () => {
                     </div>
                 </div>
             </section>
-        </Container>
+        </div>
     )
 }
 
 
 export const CallToActionSection = () => {
     return (
-        <section className="mt-24 bg-[#100650] -px-[8rem]">
+        <section className="bg-[#100650] -px-[8rem]">
             <div className="flex px-[2.06rem] md:px-32 pt-[3.5rem]  pb-[22rem]  md:py-40 flex-col md:flex-row bg-section-4 bg-origin-border bg-no-repeat bg-right-bottom md:bg-right-top" >
                 <div className="w-full md:w-2/3">
                     <span className='text-sm md:text-base text-center font-Inter text-[#100650] text-white font-medium uppercase h-[36px] bg-white/10 px-2.5 rounded-[6px] py-2'>
@@ -222,7 +222,7 @@ export const OurServices = () => {
                 <span className='text-center font-Inter text-[#100650] font-medium uppercase h-[36px] bg-[#4A00FF0F]/5 px-2.5 rounded-[6px] py-2'>
                         Our services
                     </span>
-                    <h3 className="mt-4 font-black font-Satoshi text-[2.875rem] md:text-5xl w-full  md:w-1/2 leading-[3.3rem] ">
+                    <h3 className="mt-4 font-black font-Satoshi pr-[0.5rem] text-[2.875rem] md:text-5xl w-full  md:w-1/2 leading-[3.3rem] ">
                         Powerful Digital Marketing Solutions
                     </h3>
                     <div className="mt-11 mb-52">
@@ -406,10 +406,10 @@ export const Steps = () => {
 export const SignupForms = () => {
     return (
        <Container>
-           <section className="bg-[#100650] bg-auto bg-no-repeat bg-signup-section bg-left-top mb-28 rounded-[24px] px-20 pb-12 ">
-               <div className="flex flex-row">
+           <section className="bg-[#100650] bg-auto bg-no-repeat bg-signup-section bg-left-top mb-28 rounded-[24px] px-6 md:px-20 pb-12 ">
+               <div className="flex flex-col md:flex-row">
                    <div className="pt-12">
-                       <h1 className=' w-2/3 font-black font-Satoshi text-white text-[48px] leading-[57px]'>
+                       <h1 className='w-full md:w-2/3  font-black font-Satoshi text-white text-[48px] leading-[57px]'>
                            Subscribe to Stay Up to Date
                        </h1>
                        <p className="font-Inter font-normal text-lg mt-3.5 text-white">Grow Your Business with our insights to the Digital Landscape</p>
