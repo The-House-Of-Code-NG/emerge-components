@@ -4,6 +4,8 @@ import girl from '../assets/girl.svg'
 
 import hero from '../assets/people-hold.svg'
 
+import pattern from "../assets/hero-pattern.svg"
+
 import check from '../assets/check-icon.svg'
 import vector from '../assets/hero-pattern.svg'
 import chevronDown from '../assets/chevron-down.svg'
@@ -257,55 +259,63 @@ const capabilities = [
   ];
 
   function Benefits({ benefits, title }) {
+  
     return (
       <Container>
-        <div className="benefits-container">
-        <h2 className="benefits-title">{title}</h2>
-        <div className="benefits-grid">
-          {benefits.map((benefit, index) => (
-            <div className="benefits-item" key={index}>
-              <img src={check} alt="Check Icon" className="benefits-item-check" />
-              <p className="benefits-item-text">{benefit.content}</p>
+          <div className="w-full">
+          <div className="w-full flex flex-col justify-center items-center">
+            <h2 className="text-[2.12rem] lg:text-[2.5rem] lg:text-left text-center lg:mb-[4.18rem] mb-[2.37rem] font-[900] leading-[3.43rem] lg:leading-[4.12rem]">{title}</h2>
+            <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-[2.62rem]">
+              {benefits.map((benefit, index) => (
+                <div className="flex">
+                  <img src={check} alt="Check Icon" />
+                  <p className="text-lg ml-[1.31rem]">{benefit.content}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
       </div>
       </Container>
     );
   }
 
 
-  function Tag({ children, transparent }) {
+ function Tag({ children, transparent }) {
+  
     return (
-      <div className={`tag ${transparent ? "tag-transparent" : ""}`}>
-        {children}
+      <div className={`w-fit ${transparent ? "bg-white bg-opacity-10 text-white" : "bg-[#4A00FF0F]"} text-[#100650] flex justify-center items-center lg:text-lg text-[0.87rem] text-left rounded-[6px] px-2.5`}>
+          {children}
       </div>
     );
   }
+  
 
   function Button({ children, size, onClick }) {
+  
     return (
-      <button className={`button ${size === "sm" ? "button-sm" : "button-md"}`} onClick={onClick}>
+      <button className={`all-[unset] box-border flex ${size === "sm" ? "w-full lg:w-[183.58px] h-[52px]" : 'w-full lg:w-[304px] h-[54px]'} items-center justify-center pt-[6px] pb-[8px] px-[14px] bg-[#8959ff] rounded-[8px] overflow-hidden`} onClick={onClick}>
+      <div className="relative w-fit [font-family:'Inter-SemiBold',Helvetica] font-semibold text-white text-[18px] tracking-[0] leading-[24px] whitespace-nowrap">
         {children}
-      </button>
+      </div>
+    </button>
     );
   }
 
-
   function Masthead({ pageTitle, breadcrumbs }) {
-
     return (
-      <section className="semppc-management">
-          <div className="inner">
-          <h2>{pageTitle}</h2>
-          </div>
+      <section style={{ backgroundImage: `url(${pattern})` }} className={`relative h-[199px] bg-[#100650] bg-no-repeat bg-right-top bg-cover`}>
+        <div className="relative flex items-center justify-center h-full">
+          <h2 className="text-white font-satoshi font-bold text-4xl text-lg md:text-5xl -webkit-text-stroke-width:1 -webkit-text-stroke-color:black">{pageTitle}</h2>
+        </div>
       </section>
     );
   }
+  
 
   function Container({ children }) {
+  
     return (
-      <div className="container">
+      <div className="w-full lg:px-[6.87rem] px-[1.68rem]">
         {children}
       </div>
     );
@@ -313,23 +323,24 @@ const capabilities = [
 
 
   function Hero({ title, subtitle, text, button, image }) {
+  
     return (
       <Container>
-        <div className="hero-content">
-          <div className="hero-text-block">
-            <Tag>{subtitle}</Tag>
-            <h2 className="hero-title">{title}</h2>
-            {text.map((t, index) => (
-              <p className={`hero-text ${t.className}`} key={t.id}>
-                {t.content}
-              </p>
-            ))}
-            <Button>{button.text}</Button>
+          <div className="w-full py-[5.37rem]">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="text-block w-full">
+                  <Tag>{subtitle}</Tag>
+                  <h2 className="text-[3.5rem] my-[1.81rem] leading-[3.94rem] font-[900]">{title}</h2>
+                  {text.map((t, index) => (
+                      <p className={`mb-[1.81rem] ${t.className}`} key={t.id}>{t.content}</p>
+                  ))}
+                  <Button>{button.text}</Button>
+              </div>
+              <div className="image-wrapper w-full lg:block hidden">
+                  <img src={image.url} alt={image.alt} className="w-full object-cover h-full" />
+              </div>
           </div>
-          <div className="hero-image-wrapper">
-            <img src={image.url} alt={image.alt} className="hero-image" />
-          </div>
-        </div>
+      </div>
       </Container>
     );
   }
@@ -481,27 +492,28 @@ function Accordion({ items, title }) {
 
 
   function Capabilities({ capabilities, title, content }) {
+  
     return (
-      <div className="capabilities-container">
-        <div className="capabilities-content">
-          <div className="capabilities-text">
-            <h2 className="capabilities-title">{title}</h2>
-            <p className="capabilities-description">{content}</p>
+      <div className="overflow-auto lg:px-[6.87rem] px-[1.68rem] pt-[6.18rem]">
+          <div className="w-full">
+          <div className="lg:w-1/2 mb-[1.93rem]">
+          <h2 className="text-[2.12rem] lg:text-[2.5rem] mb-5 font-[900] leading-[3.43rem] lg:leading-[4.12rem]">{title}</h2>
+            <p className="text-lg leading-7 font-normal">{content}</p>
+            </div>
+            <div className="w-full flex lg:gap-[2rem] gap-[1.06rem]">
+              {capabilities.map((capability, index) => (
+                <div className="px-[1.62rem] basis-[20.75rem] w-[20.75rem] py-[2.06rem] bg-[#F7F5FC] rounded-[1.25rem] lg:w-[23.31rem] min-h-[24.12rem]" key={capability.id}>
+                  <img src={capability.iconUrl} className='w-[3.18rem] h-[3.18rem]' alt={capability.title} />
+                  <h4 className="text-2xl font-[900] mt-[2.43rem] mb-[1.43rem]">{capability.title}</h4>
+                  <ul className='list-disc'>
+                      {capability.contentList.map((c, index) => (
+                          <li className="text-sm" key={index}>{c}</li>
+                      ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="capabilities-list">
-            {capabilities.map((capability, index) => (
-              <div className="capability-item" key={capability.id}>
-                <img src={capability.iconUrl} alt={capability.title} />
-                <h4 className="capability-title">{capability.title}</h4>
-                <ul className="capability-features">
-                  {capability.contentList.map((c, index) => (
-                    <li key={index}>{c}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     );
   }

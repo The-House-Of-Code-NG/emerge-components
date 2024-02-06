@@ -9,7 +9,7 @@ import Service from './pages/service';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import './assets/styles/homepage/index.css'
-import './assets/styles/font.css'
+// import './assets/styles/font.css'
 
 import 'swiper/css';
 import 'swiper/css/pagination';
